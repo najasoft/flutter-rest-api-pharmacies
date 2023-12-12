@@ -15,26 +15,5 @@ class Pharmacie {
     required this.longitude,
   }) : id = id ?? const Uuid().v4();
 
-  factory Pharmacie.fromJson(Map<String, dynamic> json) {
-    return Pharmacie(
-      id: json['recordid'],
-      nom: json['fields']['pharmacie'],
-      quartier: json['fields']['quartier'],
-      latitude: double.parse(json['fields']['latitude']),
-      longitude: double.parse(json['fields']['longitude']),
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'recordid': id,
-      'fields': {
-        'pharmacie': nom,
-        'quartier': quartier,
-        'latitude': latitude.toString(),
-        'longitude': longitude.toString(),
-      },
-    };
-  }
+  //Ajouter ce qu'il faut pour les conversions JSON: Pharmacie.fromJson et toJson
 }
